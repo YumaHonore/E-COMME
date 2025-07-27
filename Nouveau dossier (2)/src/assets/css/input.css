@@ -1,0 +1,102 @@
+@import "tailwindcss";
+:root {
+    --primary: #2563eb;
+    --secondary: #7c3aed;
+    --accent: #06b6d4;
+    --neon: #22d3ee;
+    --dark: #0f172a;
+    --darker: #020617;
+    --card: #1e293b;
+  }
+  
+  body {
+    background-color: var(--darker);
+    color: #e2e8f0;
+  }
+  
+  /* Éléments décoratifs */
+  .decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.15;
+    z-index: 1;
+    mix-blend-mode: screen;
+  }
+
+  .circle-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary);
+    top: -100px;
+    right: -100px;
+  }
+
+  .circle-2 {
+    width: 600px;
+    height: 600px;
+    background: var(--secondary);
+    bottom: -200px;
+    left: -200px;
+  }
+  
+  .circle-3 {
+    width: 300px;
+    height: 300px;
+    background: var(--accent);
+    bottom: -150px;
+    right: -100px;
+  }
+  
+  .circle-4 {
+    width: 500px;
+    height: 500px;
+    background: var(--neon);
+    top: -150px;
+    left: -150px;
+  }
+
+      /* Styles spécifiques */
+      header a:hover {
+    color: var(--neon);
+  }
+  
+  .card {
+    background-color: var(--card);
+    border: 1px solid #334155;
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+  }
+  
+  .icon-box {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+  }
+  
+  .btn-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(90deg, var(--neon), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .badge {
+    @apply inline-block px-3 py-1 rounded-full text-xs font-mono;
+  }
+  .badge-primary {
+    background-color: var(--primary);
+    color: white;
+  }
+  .badge-secondary {
+    background-color: var(--secondary);
+    color: white;
+}

@@ -1,0 +1,12 @@
+1. installer xampp qui a une version superieure ou egale a 8.2
+2. installer composer
+3. installer node js
+4. taper npm install
+5. taper composer install
+6. taper php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+7. taper php artisan migrate
+8. taper php artisan db:seed --class=CategoriesTableSeeder
+9. taper php artisan db:seed --class=ProduitsTableSeeder
+10. taper php artisan db:seed --class=RoleAndPermissionSeeder
+
+

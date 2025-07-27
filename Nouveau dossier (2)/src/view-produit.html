@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blazer Minimaliste - LUXE</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#f5f5f5',
+                        accent: '#ff3e00',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .product-gallery {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 16px;
+            height: 600px;
+        }
+        
+        .thumbnails {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            overflow-y: auto;
+        }
+        
+        .thumbnail {
+            width: 100%;
+            aspect-ratio: 3/4;
+            cursor: pointer;
+            border: 1px solid #e5e5e5;
+            transition: all 0.3s ease;
+        }
+        
+        .thumbnail:hover, .thumbnail.active {
+            border-color: #000;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        @media (max-width: 768px) {
+            .product-gallery {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            
+            .thumbnails {
+                flex-direction: row;
+                overflow-x: auto;
+                order: 2;
+            }
+            
+            .thumbnail {
+                width: 80px;
+                height: auto;
+            }
+        }
+        
+        .size-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        
+        .size-option {
+            border: 1px solid #e5e5e5;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .size-option:hover, .size-option.active {
+            border-color: #000;
+            background-color: #000;
+            color: white;
+        }
+        
+        .color-selector {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        
+        .color-option {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid #e5e5e5;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .color-option.active::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border: 1px solid #000;
+            border-radius: 50%;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            border: 1px solid #e5e5e5;
+            width: fit-content;
+        }
+        
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .quantity-input {
+            width: 50px;
+            height: 40px;
+            border: none;
+            text-align: center;
+            border-left: 1px solid #e5e5e5;
+            border-right: 1px solid #e5e5e5;
+        }
+        
+        .review-card {
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .star-rating {
+            color: #ffc107;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion.active .accordion-content {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-white text-primary antialiased">
+    <!-- Barre de navigation (simplifiée pour l'exemple) -->
+    <header class="sticky top-0 z-50 bg-white border-b border-gray-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="text-2xl font-bold tracking-tight">LUXE</a>
+                <div class="flex items-center space-x-4">
+                    <a href="panier.html" class="p-2 rounded-full hover:bg-secondary relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span class="absolute top-0 right-0 bg-accent text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Produit -->
+    <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Galerie Produit -->
+            <div class="product-gallery">
+                <div class="thumbnails">
+                    <div class="thumbnail active bg-gray-200"></div>
+                    <div class="thumbnail bg-gray-300"></div>
+                    <div class="thumbnail bg-gray-400"></div>
+                    <div class="thumbnail bg-gray-500"></div>
+                    <div class="thumbnail bg-gray-600"></div>
+                </div>
+                <div class="main-image bg-gray-100"></div>
+            </div>
+            
+            <!-- Détails Produit -->
+            <div>
+                <div class="mb-6">
+                    <span class="text-sm text-gray-500 uppercase tracking-wider">Vêtements / Blazers</span>
+                    <h1 class="text-3xl md:text-4xl font-bold mt-2 mb-3">Blazer Minimaliste</h1>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="star-rating">★★★★★</div>
+                        <span class="text-sm text-gray-500">(24 avis)</span>
+                    </div>
+                    <p class="text-2xl font-bold">€249</p>
+                </div>
+                
+                <!-- Sélecteur de couleur -->
+                <div class="mb-6">
+                    <p class="font-medium mb-2">Couleur: <span id="selected-color">Noir</span></p>
+                    <div class="color-selector">
+                        <div class="color-option active" style="background-color: #000;" data-color="Noir"></div>
+                        <div class="color-option" style="background-color: #964B00;" data-color="Marron"></div>
+                        <div class="color-option" style="background-color: #808080;" data-color="Gris"></div>
+                        <div class="color-option" style="background-color: #e8e8e8; border: 1px solid #ccc;" data-color="Beige"></div>
+                    </div>
+                </div>
+                
+                <!-- Sélecteur de taille -->
+                <div class="mb-6">
+                    <p class="font-medium mb-2">Taille: <span id="selected-size">M</span></p>
+                    <div class="size-selector">
+                        <div class="size-option" data-size="XS">XS</div>
+                        <div class="size-option" data-size="S">S</div>
+                        <div class="size-option active" data-size="M">M</div>
+                        <div class="size-option" data-size="L">L</div>
+                        <div class="size-option" data-size="XL">XL</div>
+                    </div>
+                    <a href="#" class="mt-2 text-sm text-gray-500 inline-block hover:text-accent">Guide des tailles</a>
+                </div>
+                
+                <!-- Quantité et Ajout au panier -->
+                <div class="mb-8">
+                    <p class="font-medium mb-2">Quantité</p>
+                    <div class="flex items-start gap-6">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" id="decrement">-</button>
+                            <input type="text" value="1" class="quantity-input" id="quantity">
+                            <button class="quantity-btn" id="increment">+</button>
+                        </div>
+                        <button class="flex-1 bg-primary text-white px-8 py-3 font-medium hover:bg-opacity-90 transition-colors h-12">
+                            Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Livraison et Retours -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="text-sm">Livraison gratuite</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="text-sm">Retours gratuits</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="text-sm">Garantie 2 ans</span>
+                    </div>
+                </div>
+                
+                <!-- Accordéons Détails -->
+                <div class="space-y-4">
+                    <div class="accordion active border-b border-gray-200 pb-4">
+                        <button class="accordion-btn w-full flex justify-between items-center">
+                            <span class="font-medium">Description</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content mt-4">
+                            <p class="text-gray-600">Le blazer minimaliste LUXE est une pièce intemporelle conçue pour durer. Taillé dans un tissu de laine premium, ce blazer offre une coupe structurée tout en conservant un confort exceptionnel. Parfait pour habiller un jean comme pour compléter un costume.</p>
+                            <ul class="mt-4 space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-accent flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                    <span>100% laine vierge</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-accent flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                    <span>Doublure en soie</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-accent flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                    <span>Finition à la main</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-accent flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                    <span>Fabriqué en Italie</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion border-b border-gray-200 pb-4">
+                        <button class="accordion-btn w-full flex justify-between items-center">
+                            <span class="font-medium">Livraison & Retours</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content mt-4 hidden">
+                            <p class="text-gray-600">Livraison standard gratuite en 2-3 jours ouvrés. Retours gratuits sous 30 jours. Pour les retours internationaux, des frais de retour peuvent s'appliquer.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <button class="accordion-btn w-full flex justify-between items-center">
+                            <span class="font-medium">Entretien</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strok

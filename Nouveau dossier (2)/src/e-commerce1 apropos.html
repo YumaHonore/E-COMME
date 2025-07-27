@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos | LUXE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#f5f5f5',
+                        accent: '#ff3e00',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-primary antialiased">
+    <!-- Barre de navigation -->
+    <header class="sticky top-0 z-50 bg-white border-b border-gray-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-bold tracking-tight">LUXE</a>
+                </div>
+
+                <!-- Navigation desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="nouveautes.html" class="text-sm font-medium hover:text-accent transition-colors">Nouveautés</a>
+                    <a href="#" class="text-sm font-medium hover:text-accent transition-colors">Vêtements</a>
+                    <a href="#" class="text-sm font-medium hover:text-accent transition-colors">Accessoires</a>
+                    <a href="#" class="text-sm font-medium hover:text-accent transition-colors">Collections</a>
+                    <a href="apropos.html" class="text-sm font-medium text-accent">À propos</a>
+                </nav>
+
+                <!-- Icônes actions -->
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full hover:bg-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                    <button class="p-2 rounded-full hover:bg-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span class="sr-only">Panier</span>
+                    </button>
+                    <button class="p-2 rounded-full hover:bg-secondary md:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <span class="sr-only">Menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section À propos -->
+    <section class="relative bg-secondary">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+            <div class="max-w-3xl">
+                <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">Notre histoire</h1>
+                <p class="text-lg text-gray-600">Découvrez les valeurs et la passion qui animent notre marque.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Histoire -->
+    <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6">L'essence de LUXE</h2>
+                    <p class="text-gray-600 mb-4">Fondée en 2015, LUXE est née d'une vision simple : créer des pièces intemporelles qui transcendent les tendances éphémères. Notre philosophie repose sur le minimalisme audacieux - des designs épurés qui font pourtant une déclaration forte.</p>
+                    <p class="text-gray-600">Chaque collection est le fruit d'un processus méticuleux, alliant savoir-faire traditionnel et innovation contemporaine. Nous croyons en une mode consciente, où la qualité prime sur la quantité.</p>
+                </div>
+                <div class="aspect-[4/3] bg-gray-200 order-1 md:order-2"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="aspect-[4/3] bg-gray-200"></div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6">Notre engagement</h2>
+                    <p class="text-gray-600 mb-4">Chez LUXE, nous nous engageons à :</p>
+                    <ul class="space-y-4 mb-6">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 mr-3 text-accent flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-600">Utiliser des matériaux durables et éthiques dans 90% de nos produits d'ici 2025</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 mr-3 text-accent flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-600">Maintenir des conditions de travail équitables dans toute notre chaîne d'approvisionnement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 mr-3 text-accent flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-600">Créer des pièces conçues pour durer, réduisant ainsi l'impact environnemental</span>
+                        </li>
+                    </ul>
+                    <p class="text-gray-600">Nous sommes fiers d'avoir obtenu la certification B Corp en 2022, témoignant de notre engagement envers des pratiques commerciales responsables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Équipe -->
+    <section class="bg-secondary py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Rencontrez notre équipe</h2>
+                <p class="text-gray-600">Une équipe passionnée dédiée à redéfinir les standards de la mode minimaliste.</p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Membre 1 -->
+                <div class="text-center">
+                    <div class="aspect-square bg-gray-200 rounded-full mx-auto mb-4 w-3/4"></div>
+                    <h3 class="font-bold">Sophie Martin</h3>
+                    <p class="text-gray-600 text-sm">Fondatrice & Directrice Creative</p>
+                </div>
+                
+                <!-- Membre 2 -->
+                <div class="text-center">
+                    <div class="aspect-square bg-gray-200 rounded-full mx-auto mb-4 w-3/4"></div>
+                    <h3 class="font-bold">Thomas Leroy</h3>
+                    <p class="text-gray-600 text-sm">Directeur Général</p>
+                </div>
+                
+                <!-- Membre 3 -->
+                <div class="text-center">
+                    <div class="aspect-square bg-gray-200 rounded-full mx-auto mb-4 w-3/4"></div>
+                    <h3 class="font-bold">Camille Dubois</h3>
+                    <p class="text-gray-600 text-sm">Chef de Produit</p>
+                </div>
+                
+                <!-- Membre 4 -->
+                <div class="text-center">
+                    <div class="aspect-square bg-gray-200 rounded-full mx-auto mb-4 w-3/4"></div>
+                    <h3 class="font-bold">Julien Moreau</h3>
+                    <p class="text-gray-600 text-sm">Responsable Développement Durable</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valeurs -->
+    <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold mb-12 text-center">Nos valeurs fondamentales</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Valeur 1 -->
+                <div class="text-center p-6 border border-secondary rounded-lg">
+                    <div class="h-12 w-12 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center text-accent">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold mb-2">Qualité exceptionnelle</h3>
+                    <p class="text-gray-600 text-sm">Nous n'acceptons aucun compromis sur la qualité de nos matériaux et notre savoir-faire artisanal.</p>
+                </div>
+                
+                <!-- Valeur 2 -->
+                <div class="text-center p-6 border border-secondary rounded-lg">
+                    <div class="h-12 w-12 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center text-accent">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold mb-2">Transparence radicale</h3>
+                    <p class="text-gray-600 text-sm">Nous partageons ouvertement nos processus et nos chaînes d'approvisionnement avec nos clients.</p>
+                </div>
+                
+                <!-- Valeur 3 -->
+                <div class="text-center p-6 border border-secondary rounded-lg">
+                    <div class="h-12 w-12 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center text-accent">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold mb-2">Design intemporel</h3>
+                    <p class="text-gray-600 text-sm">Nous créons des pièces conçues pour être portées pendant des années, pas seulement une saison.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-primary text-white py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6">Prêt à découvrir la différence LUXE ?</h2>
+            <p class="mb-8">Rejoignez notre communauté et bénéficiez de 15% de réduction sur votre première commande.</p>
+            <a href="nouveautes.html" class="inline-block bg-accent px-8 py-4 font-medium hover:bg-opacity-90 transition-colors">Découvrir la collection</a>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="bg-secondary py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-6">LUXE</h3>
+                    <p class="text-gray-600 mb-4">Une marque minimaliste pour un style audacieux et intemporel.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-primary">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-6">Boutique</h4>
+                    <ul class="space-y-3">
+                        <li><a href="nouveautes.html" class="text-gray-600 hover:text-primary transition-colors">Nouveautés</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Vêtements</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Accessoires</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Collections</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-6">Aide</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Livraison</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Retours</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-6">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Conditions</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Confidentialité</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-gray-300 text-center text-gray-600">
+                <p>&copy; 2023 LUXE. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

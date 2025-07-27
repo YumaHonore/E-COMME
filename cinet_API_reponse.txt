@@ -1,0 +1,4 @@
+[2025-07-23 10:37:45] local.INFO: [Checkout] Paiement créé {"paiement_id":18,"transaction_id":"7b7fc4ba-fc51-4f39-85e6-c7b7dd00e37f"} 
+[2025-07-23 10:37:48] local.INFO: [Checkout] Réponse CinetPay {"code":"201","message":"CREATED","description":
+"Transaction created with success","data":
+{"payment_token":"d2ded64f5f0d82ddcbb6617e172e0f0233b9ae245cbf6b07146582c2de3c507f18c805b4a1d1e78d09f66745ab6b9c18d1f051841c62a3","payment_url":"https://checkout.cinetpay.com/payment/d2ded64f5f0d82ddcbb6617e172e0f0233b9ae245cbf6b07146582c2de3c507f18c805b4a1d1e78d09f66745ab6b9c18d1f051841c62a3"},"api_response_id":"1753267065.4485"} 

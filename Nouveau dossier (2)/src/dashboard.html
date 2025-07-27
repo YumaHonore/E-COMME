@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin | LUXE</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-100 text-[#000000] antialiased">
+    <!-- Container principal -->
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-dark text-white flex-shrink-0">
+            <div class="p-4 border-b border-gray-700">
+                <h1 class="text-xl font-bold">LUXE Admin</h1>
+                <p class="text-gray-400 text-sm">Tableau de bord</p>
+            </div>
+            <nav class="p-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="#" class="flex items-center p-2 rounded bg-gray-800 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                            Tableau de bord
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-gray-800 text-gray-300 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                            Produits
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-gray-800 text-gray-300 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                            Clients
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-gray-800 text-gray-300 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                            Commandes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-gray-800 text-gray-300 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                            </svg>
+                            Commentaires
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-gray-800 text-gray-300 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Paramètres
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenu principal -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Header -->
+            <header class="bg-white border-b border-gray-200">
+                <div class="flex justify-between items-center px-6 py-4">
+                    <div class="flex items-center">
+                        <button class="mr-4 md:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                        <h2 class="text-xl font-semibold">Tableau de bord</h2>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="p-2 rounded-full hover:bg-gray-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                            </svg>
+                            <span class="sr-only">Notifications</span>
+                        </button>
+                        <div class="relative">
+                            <button class="flex items-center space-x-2 focus:outline-none">
+                                <div class="h-8 w-8 rounded-full bg-gray-300 flex items-center justify-center">
+                                    <span class="text-sm font-medium">AD</span>
+                                </div>
+                                <span class="hidden md:inline">Admin</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Contenu -->
+            <main class="flex-1 overflow-y-auto p-6">
+                <!-- Statistiques -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500">Chiffre d'affaires</p>
+                                <p class="text-2xl font-bold">€24,560</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-green-100 text-green-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="text-sm text-green-600 mt-2">+12.5% vs mois dernier</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500">Commandes</p>
+                                <p class="text-2xl font-bold">156</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="text-sm text-blue-600 mt-2">+8.3% vs mois dernier</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500">Clients</p>
+                                <p class="text-2xl font-bold">1,245</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-purple-100 text-purple-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="text-sm text-purple-600 mt-2">+5.2% vs mois dernier</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500">Taux de conversion</p>
+                                <p class="text-2xl font-bold">3.2%</p>
+                            </div>
+                            <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="text-sm text-yellow-600 mt-2">+0.8% vs mois dernier</p>
+                    </div>
+                </div>
+
+                <!-- Graphiques et commandes récentes -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Graphique CA -->
+                    <div class="bg-white rounded-lg shadow p-6 lg:col-span-2">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-semibold">Chiffre d'affaires</h3>
+                            <select class="bg-transparent border-0 text-sm focus:ring-0">
+                                <option>Ce mois</option>
+                                <option>Ce trimestre</option>
+                                <option>Cette année</option>
+                            </select>
+                        </div>
+                        <div class="h-64 bg-gray-100 rounded flex items-center justify-center">
+                            <p class="text-gray-400">Graphique du chiffre d'affaires</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Commandes récentes -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h3 class="text-lg font-semibold mb-4">Commandes récentes</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center pb-4 border-b border-gray-100">
+                                <div>
+                                    <p class="font-medium">#ORD-2023-0015</p>
+                                    <p class="text-sm text-gray-500">12 min ago</p>
+                                </div>
+                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Payé</span>
+                            </div>
+                            <div class="flex justify-between items-center pb-4 border-b border-gray-100">
+                                <div>
+                                    <p class="font-medium">#ORD-2023-0014</p>
+                                    <p class="text-sm text-gray-500">32 min ago</p>
+                                </div>
+                                <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">En traitement</span>
+                            </div>
+                            <div class="flex justify-between items-center pb-4 border-b border-gray-100">
+                                <div>
+                                    <p class="font-medium">#ORD-2023-0013</p>
+                                    <p class="text-sm text-gray-500">1h ago</p>
+                                </div>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Expédié</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="font-medium">#ORD-2023-0012</p>
+                                    <p class="text-sm text-gray-500">2h ago</p>
+                                </div>
+                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Payé</span>
+                            </div>
+                        </div>
+                        <a href="#" class="block text-center mt-4 text-[#ff3e00] hover:underline">Voir toutes les commandes</a>
+                    </div>
+                </div>
+
+                <!-- Produits et clients -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Produits populaires -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6 border-b border-gray-200">
+                            <h3 class="text-lg font-semibold">Produits populaires</h3>
+                        </div>
+                        <div class="divide-y divide-gray-200">
+                            <div class="p-4 flex items-center">
+                                <div class="h-16 w-16 bg-gray-200 rounded mr-4"></div>
+                                <div class="flex-1">
+                                    <p class="font-medium">Blazer minimaliste</p>
+                                    <p class="text-sm text-gray-500">12 ventes cette semaine</p>
+                                </div>
+                                <span class="text-[#ff3e00] font-medium">€249</span>
+                            </div>[#ff3e00]
+                            <div class="p-4 flex items-center">
+                                <div class="h-16 w-16 bg-gray-200 rounded mr-4"></div>
+                                <div class="flex-1">
+                                    <p class="font-medium">Robe longue</p>
+                                    <p class="text-sm text-gray-500">9 ventes cette semaine</p>
+                                </div>
+                                <span class="text-[#ff3e00] font-medium">€189</span>
+                            </div>
+                            <div class="p-4 flex items-center">
+                                <div class="h-16 w-16 bg-gray-200 rounded mr-4"></div>
+                                <div class="flex-1">
+                                    <p class="font-medium">Pull oversized</p>
+                                    <p class="text-sm text-gray-500">7 ventes cette semaine</p>
+                                </div>
+                                <span class="text-[#ff3e00] font-medium">€129</span>
+                            </div>
+                        </div>
+                        <a href="#" class="block p-4 text-center text-[#ff3e00] hover:underline border-t border-gray-200">Voir tous les produits</a>
+                    </div>
+                    
+                    <!-- Clients récents -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6 border-b border-gray-200">
+                            <h3 class="text-lg font-semibold">Clients récents</h3>
+                        </div>
+                        <div class="divide-y divide-gray-200">
+                            <div class="p-4 flex items-center">
+                                <div class="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center mr-4">
+                                    <span class="text-sm font-medium">JD</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-medium">Jean Dupont</p>
+                                    <p class="text-sm text-gray-500">2 commandes</p>
+                                </div>
+                                <span class="text-sm text-gray-500">Aujourd'hui</span>
+                            </div>
+                            <div class="p-4 flex items-center">
+                                <div class="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center mr-4">
+                                    <span class="text-sm font-medium">MS</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-medium">Marie Simon</p>
+                                    <p class="text-sm text-gray-500">5 commandes</p>
+                                </div>
+                                <span class="text-sm text-gray-500">Hier</span>
+                            </div>
+                            <div class="p-4 flex items-center">
+                                <div class="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center mr-4">
+                                    <span class="text-sm font-medium">TL</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-medium">Thomas Leroy</p>
+                                    <p class="text-sm text-gray-500">1 commande</p>
+                                </div>
+                                <span class="text-sm text-gray-500">2 jours</span>
+                            </div>
+                        </div>
+                        <a href="#" class="block p-4 text-center text-[#ff3e00] hover:underline border-t border-gray-200">Voir tous les clients</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
