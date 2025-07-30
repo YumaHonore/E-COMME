@@ -5,8 +5,10 @@
 5. taper composer install
 6. taper php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
 7. taper php artisan migrate
-8. taper php artisan db:seed --class=CategoriesTableSeeder
-9. taper php artisan db:seed --class=ProduitsTableSeeder
-10. taper php artisan db:seed --class=RoleAndPermissionSeeder
+php artisan db:seed --class=CategoriesTableSeeder
+php artisan db:seed --class=ProduitsTableSeeder
+php artisan db:seed --class=RoleAndPermissionSeeder
+
+11. php artisan migrate:refresh --seed
 
 

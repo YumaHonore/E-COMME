@@ -39,6 +39,14 @@ class HomeController extends Controller
             // dd($product->image);
             // feat
             $product->image = $product->image ? asset('storage/' . $product->image) : null;
+        };
+
+        $filterdCategories = $categories;
+
+        foreach($filterdCategories as $categorie){
+            // dd($product->image);
+            // feat
+            $categorie->image = $categorie->image ? asset('storage/' . $categorie->image) : null;
         }
 
         return Inertia::render('Home', [
@@ -52,7 +60,7 @@ class HomeController extends Controller
                     'role' => $rolesString
                 ] : null
                 ],
-            'categories' => $categories
+            'categories' => $filterdCategories
         ]);
     }
 }

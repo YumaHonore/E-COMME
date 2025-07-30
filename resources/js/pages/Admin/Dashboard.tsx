@@ -7,7 +7,7 @@ import PopularProducts from '@/components/Admin/PopularProducts';
 
 export default function Dashboard() {
   const stats = [
-    { title: "Chiffre d'affaires", value: "€24,560", icon: "chart-line", color: "green", trend: "+12.5% vs mois dernier" },
+    { title: "Chiffre d'affaires", value: "24 560 $", icon: "chart-line", color: "green", trend: "+12.5% vs mois dernier" },
     { title: "Commandes", value: "156", icon: "shopping-bag", color: "blue", trend: "+8.3% vs mois dernier" },
     { title: "Clients", value: "1,245", icon: "users", color: "purple", trend: "+5.2% vs mois dernier" },
     { title: "Taux de conversion", value: "3.2%", icon: "percentage", color: "yellow", trend: "+0.8% vs mois dernier" },

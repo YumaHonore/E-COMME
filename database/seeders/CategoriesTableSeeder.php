@@ -12,8 +12,8 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Categorie::create(['nom' => 'Sports', 'description' => 'sports', ]);
-        \App\Models\Categorie::create(['nom' => 'electronic', 'description' => 'sports', ]);
-        \App\Models\Categorie::create(['nom' => 'Maison', 'description' => 'sports', ]);
+        \App\Models\Categorie::create(['nom' => 'Sports', 'description' => 'sports', 'image'=>'images/images.jpg']);
+        \App\Models\Categorie::create(['nom' => 'electronic', 'description' => 'sports', 'image'=>'images/images.jpg']);
+        \App\Models\Categorie::create(['nom' => 'Maison', 'description' => 'sports', 'image'=>'images/images.jpg']);
     }
 }

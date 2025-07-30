@@ -5,15 +5,15 @@ import FeaturedProducts from '@/components/Sections/FeaturedProduct'
 import ExploreByCategory from '@/components/Sections/ExploreByCategory'
 import ValuesSection from '@/Components/Sections/ValuesSection';
 
-const Home = ({ featuredProducts, auth }) => {
+const Home = ({ featuredProducts, auth, categories }) => {
   console.log('Home',auth);
   return (
-    <Layout title="Accueil" auth={auth}>
+    <Layout title="Accueil" auth={auth} categories={categories}>
       <HeroSection featuredProducts={featuredProducts}/>
       
       {/* Section Catégories (à créer) */}
       
-      <ExploreByCategory/>
+      <ExploreByCategory categories={categories}/>
       <FeaturedProducts products={featuredProducts} />
       
       {/* Section Bannière promotionnelle (à créer) */}

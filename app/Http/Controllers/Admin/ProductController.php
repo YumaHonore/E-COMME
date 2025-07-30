@@ -106,7 +106,7 @@ class ProductController extends Controller
         }
 
         foreach ($produit->images as $image) {
-            Storage::disk('public')->delete($image->chemin);
+            Storage::disk('public')->delete($image->image_path);
             $image->delete();
         }
 
