@@ -4,12 +4,15 @@ import HeroSection from '../components/Sections/HeroSection';
 import FeaturedProducts from '@/components/Sections/FeaturedProduct'
 import ExploreByCategory from '@/components/Sections/ExploreByCategory'
 import ValuesSection from '@/Components/Sections/ValuesSection';
+import CustomSlider from './CustomSlider';
 
 const Home = ({ featuredProducts, auth, categories }) => {
   console.log('Home',auth);
   return (
     <Layout title="Accueil" auth={auth} categories={categories}>
-      <HeroSection featuredProducts={featuredProducts}/>
+      {/* <Header auth={auth} categories={categories} /> */}
+      <CustomSlider featuredProducts={featuredProducts}/>
+      {/* <HeroSection featuredProducts={featuredProducts}/> */}
       
       {/* Section Catégories (à créer) */}
       

@@ -16,6 +16,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 
 Route::get('/categorie/{slug}', [ProduitController::class, 'parCategorie'])->name('categorie.produits');
+Route::get('/categorie/{slug}', [ProduitController::class, 'parCategorie'])->name('categorie.produits');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 

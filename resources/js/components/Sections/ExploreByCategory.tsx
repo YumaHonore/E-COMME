@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@inertiajs/react';
 
 const ExploreByCategory = ({categories}) => {
   return (
@@ -8,15 +9,16 @@ const ExploreByCategory = ({categories}) => {
         
           {categories.map(categories => (
             // <ProductCard key={product.id} product={product} />
-            <a key={categories.id} href="#" className="group">
+            // <Link key={categories.id} method='get' href={route(`categorie.${categories.nom}`)} className="group">
+            <Link key={categories.id} method='get'href={route('categorie.produits', { slug: categories.nom })}>
             <div className="aspect-square bg-secondary mb-4 overflow-hidden">
               <div className="h-full w-full">
                 <img src={categories.image} alt="" srcset="" />
-                <div>{categories.image}</div>
+                {/* <div>{categories.image}</div> */}
               </div>
               </div>
             <h3 className="font-medium text-center group-hover:text-accent transition-colors">{categories.nom}</h3>
-            </a>
+            </Link>
           ))}
         
         {/* <a href="#" className="group">
