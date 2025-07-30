@@ -55,6 +55,25 @@ class HandleInertiaRequests extends Middleware
                 'success' => fn () => $request->session()->get('success'),
                 'error'   => fn () => $request->session()->get('error'),
             ],
+            'auth' => function () use ($request) {
+                return [
+                    'user' => $request->user() ? [
+                        'name' => $request->user()->name,
+                        'initials' => strtoupper(substr($request->user()->name, 0, 2)),
+                        'email' => $request->user()->email,
+                        'id' => $request->user()->id,
+                        'role' => $request->user()->getRoleNames()->implode(', ')
+                    ] : null
+                ];
+            },
+            'categories' => function () {
+                return \App\Models\Categorie::all()->map(function ($categorie) {
+                    return [
+                        ...$categorie->toArray(),
+                        'image' => $categorie->image ? asset('storage/' . $categorie->image) : null
+                    ];
+                });
+            }
         ];
     }
 }
